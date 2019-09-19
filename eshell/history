@@ -1,0 +1,41 @@
+man xinit
+./static_keyword 
+./static_keyword 
+./static_keyword 
+./static_keyword 
+./static_keyword 
+./static_keyword 
+./static_keyword 
+./static_keyword 
+gcc -o static_keyword string_literal.c 
+./static_keyword 
+./static_keyword 
+gcc -o static_keyword string_literal.c 
+ls
+./static_keyword
+gcc -o static_keyword string_literal.c 
+./static_keyword
+gcc -o static_keyword string_literal.c 
+./static_keyword
+gcc -o static_keyword string_literal.c 
+./static_keyword
+gcc -o static_keyword string_literal.c 
+gcc -o static_keyword string_literal.c 
+./static_keyword
+gcc -o static_keyword static_keyword.c 
+./static_keyword
+./static_keyword
+gcc -o static_keyword static_keyword.c 
+./static_keyword
+gcc -o static_keyword static_keyword.c 
+gcc -o static_keyword static_keyword.c 
+./static_keyword
+./static_keyword
+./static_keyword
+./static_keyword
+./static_keyword
+./static_keyword
+./static_keyword
+gcc -o static_keyword static_keyword.c 
+./static_keyword
+./static_keyword

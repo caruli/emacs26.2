@@ -1,0 +1,81 @@
+(use-package company-irony
+  :ensure t
+  :config
+  (require 'company)
+  (add-to-list 'company-backends 'comapny-irony))
+
+(use-package irony
+  :ensure t
+  :config
+  (add-hook 'c++-mode-hook 'irony-mode)
+  (add-hook 'c-mode-hook 'irony-mode)
+  (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options))
+
+(with-eval-after-load 'company
+  (add-hook 'emacs-lisp-mode-hook 'company-mode)
+  (add-hook 'c++-mode-hook 'company-mode)
+  (add-hook 'c-mode-hook 'company-mode))
+
+(use-package company-c-headers
+  :ensure t
+  :config
+(add-to-list 'company-backends 'company-c-headers)
+(add-to-list 'company-c-headers-path-system "/usr/include/"))
+
+
+
+
+;; (use-package org-bullets
+;;   :config
+;;     (add-hook 'org-mode-hook (lambda () (org-bullets-mode -1)))
+(setq org-cycle-separator-lines 0)
+(setq org-hide-leading-stars t)
+
+(with-eval-after-load 'comint
+  (unless (fboundp 'comint-clear-buffer)
+    (defun comint-clear-buffer ()
+      "Clear the comint buffer."
+      (interactive)
+      (let ((comint-buffer-maximum-size 0))
+	(comint-truncate-buffer)))
+
+	(define-key comint-mode-map "C-c M-o" #'comint-clear-buffer)))
+
+;; (use-package smex
+;;   :ensure
+;;   :bind (("M-x" . smex))
+;;   :config (smex-initialize))
+
+(use-package avy
+  :ensure t
+  :bind
+  ("M-s" . avy-goto-char))
+
+;; aspell spell-checking program
+(setq ispell-program-name "/usr/bin/aspell")
+(setq ispell-dictionary "he")
+
+(setq-default  bidi-display-reordering nil)
+
+;; (global-set-key [(control ?h)] 'delete-backward-char)
+
+;; interactive search isearch
+;;(set-face-attribute 'lazy-highlight nil :foreground "black" :background "green")
+;;; Set highlighting colors for isearch and drag
+(set-face-foreground 'highlight "white")
+(set-face-background 'highlight "blue")
+
+(set-face-foreground 'secondary-selection "skyblue")
+(set-face-background 'secondary-selection "darkblue")
+
+
+;; (require 'yasnippet)
+;; (yas-global-mode 1)
+;; (setq yas-snippet-dirs
+;;       '("~/.emacs.d/snippets"                 ;; personal snippets
+;;		))
+
+
+
+
+(provide 'external-packages)
